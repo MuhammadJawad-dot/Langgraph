@@ -1,0 +1,41 @@
+RESEARCH REPORT
+===============
+
+TITLE
+Research Report: Main Capabilities of LangGraph for Building AI Agents
+
+EXECUTIVE SUMMARY
+------------------
+This research report outlines the core capabilities of LangGraph, a low-level orchestration framework and runtime created by LangChain. Designed for building stateful, multi-actor applications with LLMs, LangGraph provides essential features such as durable execution, streaming, persistence, and human-in-the-loop interactions to support complex agentic workflows.
+
+KEY FINDINGS
+------------
+1. LangGraph functions as a low-level orchestration framework and runtime for building stateful, multi-actor LLM applications.
+2. It offers core orchestration capabilities including durable execution, streaming, persistence, and support for debugging and deployment.
+3. It enables developers to mix deterministic steps with LLM-driven agentic steps inside a single graph.
+4. It provides fine-grained control over state, loops, and human-in-the-loop interactions for complex agentic workflows.
+
+DETAILED ANALYSIS
+-----------------
+LangGraph serves as an agent runtime and low-level orchestration framework engineered to help developers build reliable AI agents capable of handling complex tasks. Its underlying capabilities focus on agent orchestration, offering features like durable execution, streaming, persistence, and support for debugging as well as deployment. A major core strength of LangGraph is its ability to seamlessly mix deterministic steps with LLM-driven agentic steps in a single graph. Furthermore, it is specifically designed for creating complex agentic workflows that demand fine-grained control over state, loops, and human-in-the-loop interactions.
+
+FACT-CHECKED CLAIMS
+--------------------
+1. LangGraph is a low-level orchestration framework and runtime for building stateful, multi-actor applications with LLMs (Verified).
+2. It provides core capabilities such as durable execution, streaming, persistence, and human-in-the-loop interactions (Verified).
+3. It allows developers to mix deterministic steps with LLM-driven agentic steps within a single graph (Verified).
+4. It offers fine-grained control over state, loops, and complex agentic workflows (Verified).
+
+CONCLUSION
+----------
+LangGraph is a robust low-level orchestration framework and runtime that empowers developers to build and scale reliable AI workloads, conversational agents, and custom LLM-backed experiences. By offering foundational capabilities such as durable execution, streaming, persistence, state control, and the ability to combine deterministic and LLM-driven steps, LangGraph facilitates the creation of complex, stateful, multi-actor AI applications.
+
+SOURCES
+-------
+1. https://www.langchain.com/langgraph
+2. https://docs.langchain.com/oss/python/langgraph/overview
+3. https://deepwiki.com/langchain-ai/docs/2.2-langgraph-framework-documentation
+4. https://docs.langchain.com/oss/python/langgraph/workflows-agents
+5. https://github.com/jkmaina/LangGraphProjects
+6. https://reference.langchain.com/
+7. https://reference.langchain.com/python/langgraph

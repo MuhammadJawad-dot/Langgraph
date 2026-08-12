@@ -1,92 +1,107 @@
 from langchain_core.messages import HumanMessage
-from app.agents.analysis_agent import analysis_graph
-from app.agents.fact_check_agent import fact_check_graph
-from app.agents.web_search_agent import web_search_graph
-from app.agents.writing_agent import writing_graph
+from app.sub_graphs.research_graph import research_graph
 from app.utils.report_writer import save_report_txt
+from app.services.research_runner import resume_research,start_research
 
 def main():
+    
 
-    question=(
-        "What are the main benefits and capabilities of LangGraph supervisor architecture?"
+    thread_id = "research-001"
+
+    question = (
+        "What are the main capabilities of "
+        "LangGraph for building AI agents?"
     )
 
-    state = web_search_graph.invoke(
-        {
-            "question": question,
+    print("\nStarting research...\n")
 
-            "messages": [
-                HumanMessage(
-                    content=(
-                        f"Reasearch this question:"
-                        f"{question}."
-                        f"Search the web and collect "
-                        f"reliable sources."
+    state = resume_research(thread_id)
 
-                    )
-                )
-            ],
-        }
-    )
+    print("\nResearch completed.")
+    
+#     question=(
+#         "What are the main benefits and capabilities of LangGraph supervisor architecture?"
+#     )
 
-    print("\nSEARCH COMPLETE")
-    print(
-        f"Sources found: "
-        f"{len(state['search_results'])}"
-    )
-    # ----------------------------------------------
-    # 2. Analysis Agent
-    # ----------------------------------------------
+#     state = web_search_graph.invoke(
+#         {
+#             "question": question,
 
-    state = analysis_graph.invoke(state)
+#             "messages": [
+#                 HumanMessage(
+#                     content=(
+#                         f"Reasearch this question:"
+#                         f"{question}."
+#                         f"Search the web and collect "
+#                         f"reliable sources."
 
-    print("\nANALYSIS")
-    print("=" * 80)
+#                     )
+#                 )
+#             ],
+#         }
+#     )
 
-    print(state["analysis"])
+#     print("\nSEARCH COMPLETE")
+#     print(
+#         f"Sources found: "
+#         f"{len(state['search_results'])}"
+#     )
+#     # ----------------------------------------------
+#     # 2. Analysis Agent
+#     # ----------------------------------------------
 
-    print("\nCLAIMS")
-    print("=" * 80)
+#     state = analysis_graph.invoke(state)
 
-    for claim in state["claims"]:
-        print("-", claim)
+#     print("\nANALYSIS")
+#     print("=" * 80)
 
-    state = fact_check_graph.invoke(state)
+#     print(state["analysis"])
 
-    print("\nFACT CHECKS")
-    print("=" * 80)
+#     print("\nCLAIMS")
+#     print("=" * 80)
 
-    for check in state["fact_checks"]:
+#     for claim in state["claims"]:
+#         print("-", claim)
 
-        print("\nCLAIM:")
-        print(check["claim"])
+#     state = fact_check_graph.invoke(state)
 
-        print("\nSTATUS:")
-        print(check["status"])
+#     print("\nFACT CHECKS")
+#     print("=" * 80)
 
-        print("\nEVIDENCE:")
-        print(check["evidence"])
+#     for check in state["fact_checks"]:
 
-        print("\nSOURCE:")
-        print(check["source"])
+#         print("\nCLAIM:")
+#         print(check["claim"])
 
-        print("-" * 80)
-     # ==============================================
-    # 4. WRITING
-    # ==============================================
+#         print("\nSTATUS:")
+#         print(check["status"])
 
-    state = writing_graph.invoke(
-        state
-    )
+#         print("\nEVIDENCE:")
+#         print(check["evidence"])
 
-   
+#         print("\nSOURCE:")
+#         print(check["source"])
+
+#         print("-" * 80)
+#      # ==============================================
+#     # 4. WRITING
+#     # ==============================================
+
+#     state = writing_graph.invoke(
+#         state
+#     )
+
     file_path=save_report_txt(
         report=state["final_report"],
-        filename="supervisor_architecture_benefits.txt"
+        filename="supervisor3_architecture_benefits.txt"
     )
 
-    print("\nREPORT Successfully Generated to:")
-    print(file_path)
+    # print("\nREPORT Successfully Generated to:")
+#     print(file_path)
+#     snapshot = research_graph.get_state(config)
+#     print(
+#     snapshot.values
+# )
 
 if __name__ == "__main__":
     main()

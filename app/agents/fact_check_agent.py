@@ -40,10 +40,10 @@ structured_llm = llm.with_structured_output(
 # Agent
 # --------------------------------------------------
 
-def fact_check_agent(
-    state: ResearchState
-):
-
+def fact_check_agent(state: ResearchState):
+    # raise RuntimeError(
+    #     "TEST FAILURE"
+    # )
     question = state["question"]
 
     claims = state.get(

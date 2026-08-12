@@ -1,0 +1,49 @@
+RESEARCH REPORT
+===============
+
+TITLE
+Research Report: Main Capabilities of LangGraph for Building AI Agents
+
+EXECUTIVE SUMMARY
+------------------
+LangGraph is an agent orchestration framework and underlying engine developed by LangChain Inc. It provides low-level supporting infrastructure for building resilient, long-running, and stateful AI agents and multi-agent workflows by modeling workflows as graphs.
+
+KEY FINDINGS
+------------
+1. LangGraph models agent workflows using three key components: State, Nodes, and Edges.
+2. It enables the combination of hand-coded, deterministic logic with LLM-driven decision-making in a single graph.
+3. It supports multiagent workflows for handling complex tasks through dedicated agents.
+4. Persistence features like checkpointers allow for short-term memory, failure recovery, and resuming after interruptions.
+5. It natively supports cyclical graphs, durable execution, streaming, and human-in-the-loop interactions.
+
+DETAILED ANALYSIS
+-----------------
+LangGraph serves as an orchestration framework and underlying engine designed to tackle the challenges of agent development. At its core, it models agent workflows as graphs using three key components: State (a shared data structure representing the current snapshot), Nodes (functions that encode agent logic, containing either an LLM or code), and Edges (functions that determine the next step). By composing nodes and edges, developers can create complex, looping cyclical workflows that evolve state over time. Furthermore, LangGraph offers robust persistence capabilities through checkpointers to maintain state across interactions, recover from failures, and handle human-in-the-loop scenarios.
+
+FACT-CHECKED CLAIMS
+--------------------
+1. LangGraph models agent workflows as graphs using three key components: State, Nodes, and Edges. (Status: verified)
+2. It allows developers to mix hand-coded, deterministic logic with LLM-driven decision-making in a single graph. (Status: verified)
+3. LangGraph supports multiagent workflows, enabling complex tasks to be tackled by coordinating dedicated agents. (Status: verified)
+4. It provides persistence features such as checkpointers to persist a thread's graph state for short-term memory, failure recovery, and resuming after interruptions. (Status: verified)
+5. LangGraph supports cyclical graphs, which are often necessary for agent runtimes and looping workflows. (Status: verified)
+6. It focuses on core capabilities important for agent orchestration like durable execution, streaming, and human-in-the-loop. (Status: verified)
+
+CONCLUSION
+----------
+LangGraph provides a comprehensive set of capabilities for building reliable AI agents, anchored by its graph-based architecture, state persistence, support for cyclical and multi-agent workflows, and foundational orchestration tools such as streaming and human-in-the-loop interactions.
+
+SOURCES
+-------
+1. https://www.langchain.com/langgraph
+2. https://docs.langchain.com/oss/python/langgraph/overview
+3. https://medium.com/@akankshasinha247/building-ai-agents-with-langgraph-langchain-fab4f5310bc3
+4. https://www.ibm.com/think/topics/langgraph
+5. https://github.com/langchain-ai/langgraph
+6. https://blog.langchain.dev/langgraph/
+7. https://deepwiki.com/langchain-ai/docs/2.2-langgraph-framework-documentation
+8. https://www.datacamp.com/tutorial/langgraph-tutorial
+9. https://docs.langchain.com/oss/python/langgraph/graph-api
+10. https://docs.langchain.com/oss/javascript/langgraph/graph-api
+11. https://docs.langchain.com/oss/python/langgraph/persistence
+12. https://docs.langchain.com/oss/python/langgraph/thinking-in-langgraph
