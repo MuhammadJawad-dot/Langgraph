@@ -10,8 +10,8 @@ from langgraph.graph.message import add_messages
 from app.state.research_state import ResearchState
 import json
 
-class AgentState(TypedDict):
-    messages: Annotated[list[BaseMessage], add_messages]
+# class AgentState(TypedDict):
+#     messages: Annotated[list[BaseMessage], add_messages]
 
 tools = [duckduckgo_search,serpapi_search]
 llm_with_tools = llm.bind_tools(tools)
@@ -57,16 +57,16 @@ def collect_search_results(
 
 tool_node = ToolNode(tools)
 
-def should_continue(state: AgentState):
+def should_continue(state: ResearchState):
 
     last_message = state["messages"][-1]
 
     if last_message.tool_calls:
         return "tools"
 
-    return END
+    return "finish"
 
-graph_builder = StateGraph(AgentState)
+graph_builder = StateGraph(ResearchState)
 
 
 graph_builder.add_node(

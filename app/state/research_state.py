@@ -25,6 +25,12 @@ class ResearchState(TypedDict, total=False):
     # Conversation / ReAct messages
     messages: Annotated[list[BaseMessage], add_messages]
 
+    # Fact-checking messages/ReAct
+    # fact_check_messages: Annotated[
+    #     list[BaseMessage],
+    #     add_messages
+    # ]
+
     # Web Search Agent output
     search_results: list[SearchResult]
 
