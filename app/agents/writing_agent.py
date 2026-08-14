@@ -68,7 +68,7 @@ def writing_agent(
     result = structured_llm.invoke(prompt)
 
     return {
-        "final_report":result
+        "final_report":result  #result.model_dump()
     }
 
 graph_builder = StateGraph(ResearchState)

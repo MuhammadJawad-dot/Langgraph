@@ -3,7 +3,7 @@ from pathlib import Path
 
 def save_report_txt(
     report,
-    filename="research_report.txt"
+    filename="research2_report.txt"
 ):
 
     output_dir = Path("reports")

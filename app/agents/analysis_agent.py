@@ -59,6 +59,7 @@ def analysis_agent(
     prompt = ANALYSIS_PROMPT.format(
         question=question,
         search_results=search_results,
+        feedback=state.get("approved_feedback", "None")
     )
 
     result = structured_llm.invoke(prompt)

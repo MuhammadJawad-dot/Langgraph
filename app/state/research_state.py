@@ -1,5 +1,5 @@
 from typing import TypedDict, Annotated
-
+from langgraph.types import interrupt, Command
 from langchain_core.messages import BaseMessage
 from langgraph.graph.message import add_messages
 
@@ -40,9 +40,18 @@ class ResearchState(TypedDict, total=False):
 
     # Fact-Check Agent output
     fact_checks: list[FactCheck]
+    
+    # Human Approval
+    approval:str
+    approved_feedback:str
 
     # Writing Agent output
     final_report: str
 
+    
+
     # Supervisor control
-    next_agent: str
+    # next_agent: str
+
+    
+    
